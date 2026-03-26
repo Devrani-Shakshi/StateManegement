@@ -1,0 +1,37 @@
+
+<div class="chat-wrapper">
+  <div class="chat-card">
+    <!-- Header -->
+    <div class="chat-header bg-dark text-white p-3">
+      <h5 class="m-0">Global Chat</h5>
+    </div>
+
+    <!-- Message Display Area -->
+    <div class="chat-body" #scrollContainer>
+      <div *ngFor="let item of messages" 
+           [ngClass]="{'message-right': item.user === user, 'message-left': item.user !== user}">
+        
+        <div class="message-bubble shadow-sm">
+          <small class="d-block fw-bold mb-1">{{ item.user }}</small>
+          <span>{{ item.message }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Input Area -->
+    <div class="chat-footer p-3 bg-light border-top">
+      <div class="input-group mb-2">
+        <span class="input-group-text">@</span>
+        <input type="text" class="form-control form-control-sm" [(ngModel)]="user" placeholder="Your Name">
+      </div>
+      
+      <div class="input-group">
+        <input type="text" class="form-control" [(ngModel)]="message" 
+               (keyup.enter)="sendMessage()" placeholder="Type a message...">
+        <button class="btn btn-primary" (click)="sendMessage()">
+          Send
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

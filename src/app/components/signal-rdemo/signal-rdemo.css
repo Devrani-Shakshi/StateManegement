@@ -1,0 +1,60 @@
+
+.chat-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f0f2f5;
+  height: calc(100vh - 56px); /* Adjust based on navbar height */
+}
+
+.chat-card {
+  width: 100%;
+  max-width: 600px;
+  background: white;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.chat-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.message-bubble {
+  padding: 10px 15px;
+  border-radius: 18px;
+  /* max-width: 75%; */
+  word-wrap: break-word;
+}
+
+/* Sent by you - Blue and on the right */
+.message-right {
+  align-self: flex-end;
+}
+.message-right .message-bubble {
+  background-color: #007bff;
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+/* Sent by others - Gray and on the left */
+.message-left {
+  align-self: flex-start;
+}
+.message-left .message-bubble {
+  background-color: #e9ecef;
+  color: #333;
+  border-bottom-left-radius: 4px;
+}
+
+.chat-footer {
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
